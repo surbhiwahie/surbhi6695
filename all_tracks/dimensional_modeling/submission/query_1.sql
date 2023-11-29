@@ -4,7 +4,7 @@ CREATE TABLE surbhiwahie.actors (
     films ARRAY(ROW(
         film VARCHAR,
         votes INTEGER,
-        rating INTEGER,
+        rating DOUBLE,
         filmid VARCHAR
     )),
     quality_class VARCHAR,
