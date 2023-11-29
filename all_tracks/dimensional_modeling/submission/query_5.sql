@@ -12,10 +12,11 @@ WITH
       COALESCE(ly.actor, cy.actor) AS actor,
       COALESCE(ly.start_date, cy.current_year) AS start_year,
       COALESCE(ly.end_date, cy.current_year) AS end_year,
-      CASE
-        WHEN ly.is_active <> cy.is_active THEN 1
-        WHEN ly.is_active = cy.is_active THEN 0
-      END AS did_change,
+     CASE WHEN ly.is_active <> cy.is_active
+          OR ly.quality_class <> ty.quality_class THEN 1
+          WHEN ly.is_active = cy.is_active THEN
+          y.quality_class = ty.quality_class THEN 0
+          END as did_change,
       ly.is_active AS is_active_last_year,
       cy.is_active AS is_active_this_year,
       2021 AS current_year
