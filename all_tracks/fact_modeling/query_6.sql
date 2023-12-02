@@ -7,3 +7,4 @@ FROM
     bootcamp.web_events
 GROUP BY
     host
+
