@@ -1,4 +1,5 @@
 from pyspark.sql import SparkSession
+import os
 
 
 def create_spark_session():
