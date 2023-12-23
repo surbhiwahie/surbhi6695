@@ -15,5 +15,9 @@ def main():
     .sortWithinPartitions("completion_date") \
     .saveAsTable(partitioned_table_5c)
 
+
+## This is how we find the memory consumed for each partition 
+## du -hs spark-warehouse/partitioned_table_5c/
+
 if __name__ == "__main__":
     main()
