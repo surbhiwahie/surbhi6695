@@ -6,34 +6,31 @@ from create_spark_session import init_spark
 def main():
     spark = init_spark()
 
-    medals = "/Users/scarstruck/Documents/GitHub/bootcamp3/infrastructure/4-apache-spark-training/Homework_data/maps.csv"
-    medals_df = spark.read.format("csv").option("header", "true").load(medals)
+    medals_file = "/Users/scarstruck/Documents/GitHub/bootcamp3/infrastructure/4-apache-spark-training/Homework_data/medals.csv"
+    medals = spark.read.format("csv").option("header", "true").load(medals_file)
+    match_details_file = "/Users/scarstruck/Documents/GitHub/bootcamp3/infrastructure/4-apache-spark-training/Homework_data/match_details.csv"
+    match_details = spark.read.format("csv").option("header", "true").load(match_details_file)
+    medals_matches_players_file= "/Users/scarstruck/Documents/GitHub/bootcamp3/infrastructure/4-apache-spark-training/Homework_data/medals_matches_players.csv"
+    medals_matches_players = spark.read.format("csv").option("header", "true").load(medals_matches_players_file)
+    matches_file="/Users/scarstruck/Documents/GitHub/bootcamp3/infrastructure/4-apache-spark-training/Homework_data/matches.csv"
+    matches=spark.read.format("csv").option("header", "true").load(matches_file)
+    maps_file="/Users/scarstruck/Documents/GitHub/bootcamp3/infrastructure/4-apache-spark-training/Homework_data/maps.csv"
+    maps=spark.read.format("csv").option("header", "true").load(maps_file)
     
-    #now we will find the medal_ids whose classification is "Killing Spree"
-    medal_id_killing_spree = medals_df.filter(col('medal_name') == 'Killing Spree').select('medal_id').first()['medal_id']
+    
+    df = match_details \
+    .join(medals_matches_players, ["match_id", "player_gamertag"]) \
+    .join(matches, "match_id")
 
-
-    # Define the SQL query with the actual medal_id
-    sql_query = f"""
-        SELECT mapid, COUNT(*) AS killing_spree_count
-        FROM surbhiwahie.joined_bucketed
-        WHERE medal_id = '{medal_id_killing_spree}'
-        GROUP BY mapid
-    """
-
-    # Fetch data into a DataFrame
-    killing_spree_counts = spark.sql(sql_query)
-
-    # Show the DataFrame
-    killing_spree_counts.show()
-
-   # Find the map with the highest number of Killing Spree medals
-    most_killing_spree_map = (
-        killing_spree_counts
-        .orderBy(col("killing_spree_count").desc())
-        .select("mapid", "killing_spree_count")
-        .first()
-)
+    most_killing_spree_map = df \
+        .groupBy("mapid", "medal_id") \
+        .agg(sum("count").alias("num_medals")) \
+        .join(medals, "medal_id") \
+        .where(col("classification") == "KillingSpree") \
+        .join(maps.alias("m"), "mapid") \
+        .select(col("m.name"), col("classification"), col("num_medals")) \
+        .orderBy(desc("num_medals")) \
+        .limit(1)
 
     # Show the result
     most_killing_spree_map.show(1)
