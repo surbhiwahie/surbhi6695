@@ -15,5 +15,9 @@ def main():
     .sortWithinPartitions("playlist_id") \
     .saveAsTable(partitioned_table_5b)
 
+
+## This is how we find the memory consumed for each partition 
+## du -hs spark-warehouse/partitioned_table_5b/
+
 if __name__ == "__main__":
     main()
