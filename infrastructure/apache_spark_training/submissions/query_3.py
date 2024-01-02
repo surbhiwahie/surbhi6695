@@ -118,7 +118,7 @@ def main():
     all_joined = matches_df.join(
         match_details_df, matches_df["match_id"] == match_details_df["match_id"], "full_outer"
     ).join(
-        medals_matches_players_df, matches_df["match_id"] == medals_matches_players_df["match_id"], "full_outer"
+        medals_matches_players_df, matches_df["match_id"] == medals_matches_players_df["match_id"], "leftouter"
     )
 
     # Select the required columns with appropriate aliases
