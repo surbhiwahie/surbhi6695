@@ -28,3 +28,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+## Output of the query
+##  player_gamertag	== nNina Dobrev
+## avg_player_kills ==  5.473684210526316
+
