@@ -19,3 +19,6 @@ WHERE
     AND gs.team_id IS NULL
     AND season IS NOT NULL
 ORDER BY gs.points DESC
+
+
+## -- Kevin Durant in 2013 with 3,265
