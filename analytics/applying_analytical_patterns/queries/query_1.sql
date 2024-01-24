@@ -61,7 +61,7 @@ SELECT player_name,
   last_active_season,
   dates_active AS seasons_active,
   CASE
-    WHEN ABS(season - first_active_season) = 0 THEN 'New'
+    WHEN season - first_active_season = 0 THEN 'New'
 		WHEN last_active_season - active_season_ly = 1 THEN 'Continued Playing'
 		WHEN season IS NULL AND active_season_ly IS NOT NULL THEN 'Retired'
 		WHEN season IS NULL AND active_season_ly IS NULL THEN 'Stayed Retired'
