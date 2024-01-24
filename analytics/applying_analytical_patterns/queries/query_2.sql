@@ -16,13 +16,10 @@ WITH games AS (
     distinct
     season, 
     game_id, 
-    home_team_id, 
-    visitor_team_id, 
-    home_team_wins,
-    CASE
-        WHEN home_team_wins = 1 THEN   home_team_id
-        ELSE visitor_team_id
-    END as winning_team
+        CASE
+            WHEN home_team_wins = 1 THEN home_team_id
+            ELSE visitor_team_id
+        END AS winning_team
     FROM bootcamp.nba_games
 ),
 game_details AS (
