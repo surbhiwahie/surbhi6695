@@ -51,7 +51,8 @@ window AS (
                 PARTITION BY team
                 ORDER BY
                     game_date_est DESC
-                ROWS BETWEEN 90 PRECEDING AND CURRENT ROW
+                ROWS BETWEEN 89 PRECEDING AND CURRENT ROW
+
             )
             AS wins_last_90_games
     FROM wide_to_long
