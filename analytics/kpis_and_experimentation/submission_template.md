@@ -1,77 +1,80 @@
-# Analytics Track KPIs and Experimentation Homework
-
 ## User Story
 
-Product: [Name the product you're passionate about that you're going to use for this homework.]
+PRODUCT: Instagram
 
-[Write down the evolution of your interactions, and the degree to which you've used this product over history. How have you interacted with this product over time?]
+Over the years, my interaction with Instagram has evolved significantly. Initially, I joined the platform to share personal moments and connect with friends. Over time, Instagram became an integral part of my daily routine for both personal and professional purposes. I started engaging with diverse content, exploring features like Stories and IGTV, and even using it for shopping. The platform's algorithm has played a crucial role in shaping my content discovery experience. As a user, I appreciate the platform's ability to adapt to my preferences while providing a mix of content from friends, influencers, and brands.
 
 ## Experiments
 
-In this section, you'll specify tests and hypotheses for new features on your product of choice.
+Experiment 1:  Algorithmic Feed vs. Chronological Feed
 
-### Experiment 1
+•	Changes: Control (no feature): Users see posts in the current algorithmic feed order.
+•	Test Cell 1: Users see posts in chronological order.
 
-Changes: [Enter your proposed changes for the new feature here.]
+Hypothesis: I hypothesize that switching to a chronological feed may result in increased user engagement as users have more control over the content they see, leading to a more satisfying browsing experience.
 
-Hypothesis: [Enter your hypothesis about what the result of making the new changes will be.]
-
-Test cell allocation:
-
-- Control (no feature) - [Enter your % allocation to this group]
-- [Test cell 1 name] - [Enter your % allocation to this group]
-- ...
+Test Cell Allocation:
+•	Control (no feature) - 50%
+•	Test Cell 1 (Chronological feed) - 50%
 
 Leading Metrics:
-
-- [Enter your leading metrics here]
-- ...
+•	Likes per post
+•	Comments per post
+•	Time spent on the platform
 
 Lagging Metrics:
+•	Daily active users
+•	User retention rate
 
-- [Enter your lagging metrics here]
-- ...
 
-### Experiment 2
+### Experiment 2:  Story Curation Algorithm
 
-Changes: [Enter your proposed changes for the new feature here.]
+Changes:
+•	Control (no feature): Stories are ordered based on the current algorithm.
+•	Test Cell 1: Stories are ordered in chronological order
 
-Hypothesis: [Enter your hypothesis about what the result of making the new changes will be.]
 
-Test cell allocation:
 
-- Control (no feature) - [Enter your % allocation to this group]
-- [Test cell 1 name] - [Enter your % allocation to this group]
-- ...
+
+Hypothesis: 
+I hypothesize that a chronological story order will lead to higher story completion rates and increased daily active users as users may find it easier to catch up on stories in a time-based sequence.
+
+Test Cell Allocation:
+•	Control (no feature) - 50%
+•	Test Cell 1 (Chronological story order) - 50%
 
 Leading Metrics:
-
-- [Enter your leading metrics here]
-- ...
+•	Story completion rate
+•	Daily active users
 
 Lagging Metrics:
+•	User engagement over time
+•	Time spent on stories
 
-- [Enter your lagging metrics here]
-- ...
 
-### Experiment 3
+## Experiment 3: Enhanced Shopping Experience
 
-Changes: [Enter your proposed changes for the new feature here.]
 
-Hypothesis: [Enter your hypothesis about what the result of making the new changes will be.]
+Changes:
+•	Control (no feature): Users navigate through the existing shopping features.
+•	Test Cell 1: Introduce personalized shopping recommendations and an enhanced browsing experience.
 
-Test cell allocation:
 
-- Control (no feature) - [Enter your % allocation to this group]
-- [Test cell 1 name] - [Enter your % allocation to this group]
-- ...
+Hypothesis: I hypothesize that an enhanced shopping experience will lead to a higher conversion rate from product discovery to purchase, resulting in increased revenue from in-app purchases.
+
+
+Test Cell Allocation:
+•	Control (no feature) - 60%
+•	Test Cell 1 (Enhanced shopping features) - 40%
+
 
 Leading Metrics:
+•	Conversion rate
+•	Click-through rate on shopping recommendations
 
-- [Enter your leading metrics here]
-- ...
 
 Lagging Metrics:
+•	Revenue from in-app purchases
+•	User satisfaction with shopping features
 
-- [Enter your lagging metrics here]
-- ...
+![image](https://github.com/surbhiwahie/surbhi6695/assets/24772688/8b3ce929-388b-4177-9114-94d00c6805a5)
